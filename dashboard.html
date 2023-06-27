@@ -1,0 +1,925 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+<body class="bg-image">
+    <section class="bg">
+        <div class="container">     
+            <div class="col-md-1">
+                <nav class="navbar navbar-expand-md flex-md-column flex-row align-items-start">
+                  <div class="navbar-logo">
+                    <img src="logo.png" alt="Logo">
+                </div><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link custom-class" href="index.html"><img src="Home.png" alt="Home"><span>Home</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-class1" href="#menuItems"><img src="Menu Squared.png" alt=""><span>Menu</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-class2" href="#cartTable"><img src="Shopping Cart.png" alt="Home"><span>My Orders</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link custom-class2 profile" href="#"><img src="profile.png" alt="Home"><span id="profileName"></span></a>                            </li>
+                        </ul>
+                        
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <div class="container d-flex justify-content-center">
+            <h5>Choose Categories</h5>
+            <form class="forsearch col-1 col-lg-3" role="search">
+              <input type="search" id="searchInput" class="form-control custom-search" placeholder="Search..." aria-label="Search" onkeyup="searchMenu()">
+          </form>
+        </div>
+        <div class="category">
+            <div class="buttons d-flex gap-5 justify-content-center">
+              <input type="button" value="Hot Coffee" class="btnfirst" onclick="showMenu('hotCoffee')">
+              <input type="button" value="Iced Coffee" class="btn2" onclick="showMenu('icedCoffee')">
+              <input type="button" value="Fruit Tea" class="btn3" onclick="showMenu('fruitTea')">
+              <input type="button" value="Frappe" class="btn4" onclick="showMenu('frappe')">
+              <input type="button" value="Snacks" class="btn5" onclick="showMenu('snacks')">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="menuItems">
+        <div class="row" id="menuItems">
+            <div class="col-md-4">
+                    <div class="menu-item">
+                        <img src="1st.png" alt="Coffee 1">
+                        <h6>ESPRESSO (₱120)</h6>
+                        <button class="btn btn-primary" onclick="addToCart('ESPRESSO', '120')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="menu-item">
+                        <img src="2nd.png" alt="Coffee 2">
+                        <h6>LATTE (₱170)</h6>
+                        <button class="btn btn-primary" onclick="addToCart('LATTE', '170')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="menu-item">
+                        <img src="3rd.png" alt="Coffee 3">
+                        <h6>CAPPUCCINO (₱130)</h6>
+                        <button class="btn btn-primary" onclick="addToCart('CAPPUCCINO', '130')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="menu-item">
+                      <img src="4th.png" alt="Coffee 3">
+                      <h6>CHARCOAL COFFEE (₱190)</h6>
+                      <button class="btn btn-primary" onclick="addToCart('CHARCOAL COFFEE', '190')">Add to Cart</button>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                <div class="menu-item">
+                    <img src="5th.png" alt="Coffee 3">
+                    <h6>MATCHA LATTE (₱150)</h6>
+                    <button class="btn btn-primary" onclick="addToCart('MATCHA LATTE', '150')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="menu-item">
+                  <img src="6th.png" alt="Coffee 3">
+                  <h6>BLUEBERRY LATTE (₱190)</h6>
+                  <button class="btn btn-primary" onclick="addToCart('BLUEBERRY LATTE', '190')">Add to Cart</button>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="menu-item">
+                <img src="7th.png" alt="Coffee 3">
+                <h6>MOCHA LATTE (₱180)</h6>
+                <button class="btn btn-primary" onclick="addToCart('MOCHA LATTE', '180')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menu-item">
+              <img src="8th.png" alt="Coffee 3">
+              <h6>HAZELNUT LATTE (₱175)</h6>
+              <button class="btn btn-primary" onclick="addToCart('HAZELNUT LATTE', '175')">Add to Cart</button>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-item">
+            <img src="9th.png" alt="Coffee 3">
+            <h6>MACCIATHO (₱195)</h6>
+            <button class="btn btn-primary" onclick="addToCart('MACCIATHO', '195')">Add to Cart</button>
+        </div>
+    </div>
+      </div>
+    </div>
+
+    <h2>My Orders</h2>
+
+    <table id="cartTable">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Size</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Action</th> <!-- Add a new table header for the action column -->
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Cart items will be dynamically added here -->
+        </tbody>
+      </table>
+
+      <div class="container">
+        <h2>Order Summary</h2>
+        <form id="orderForm">
+          <div class="form-group">
+            <label for="deliveryAddress">Address:</label>
+            <input type="text" class="form-control" id="deliveryAddress" placeholder="Enter delivery address">
+          </div>
+          <div class="form-group">
+            <label for="voucher">Voucher:</label>
+            <select class="form-control" id="voucher">
+              <option value="voucher1">Voucher 1</option>
+              <option value="voucher2">Voucher 2</option>
+              <option value="voucher3">Voucher 3</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="paymentMode">Mode of Payment:</label>
+            <select class="form-control" id="paymentMode">
+              <option value="cash">Cash</option>
+              <option value="credit">Credit Card</option>
+              <option value="debit">Debit Card</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="totalPrice">Total Price:</label>
+            <input type="text" class="form-control" id="totalPrice" readonly>
+          </div>
+          <button type="submit" class="btn BTNCON btn-primary" onclick="confirmOrder()">Checkout</button>
+        </form>
+      </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+<style>
+ .nav-item .nav-link span {
+  color: #E1DAD3;
+}
+.custom-search.search-hover:hover {
+  background-color: #fff;
+  color: #603809;
+  cursor: pointer;
+}
+
+.dropdown-menu
+{
+    color: #603809;
+}
+
+.BTNCON{
+    margin-top: 20px;
+}
+#orderForm {
+    background-color: #E1DAD3;
+    padding: 20px;
+    border: 1px solid #5E4A3C;
+    border-radius: 5px;
+  }
+
+  /* Input field styles */
+  #orderForm input[type="text"],
+  #orderForm select {
+    background-color: #FFFFFF;
+    border: 1px solid #5E4A3C;
+    color: #603809;
+    padding: 5px;
+  }
+
+  /* Submit button styles */
+  #orderForm button[type="submit"] {
+    background-color: #5E4A3C;
+    border: 1px solid #603809;
+    color: #F7E6C5;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  #orderForm button[type="submit"]:hover {
+    background-color: #BE9B7B;
+    border-color: #F7E6C5;
+    color: #603809;
+  }
+
+   #cartTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#cartTable th,
+#cartTable td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #F5DEB3;
+}
+
+#cartTable th {
+  background-color: #D9D9D9;
+  font-weight: bold;
+}
+
+#cartTable tbody tr:nth-child(even) {
+  background-color: D9D9D9;
+}
+
+#cartTable tbody tr:hover {
+  background-color: D9D9D9;
+}
+
+#cartTable td.price {
+  font-size: 16px; /* Adjust the font size as needed */
+}
+
+  body {
+      background-color: #93867C;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      color: #5E4A3C;
+  }
+
+  .bg-image {
+      background-image: url("background.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+
+  .container {
+      margin-top: 20px;
+  }
+
+  .h4 {
+      color: #fff;
+  }
+
+  .bg {
+      background-color: #5E4A3C;
+margin-top: -20px;
+    }
+
+    .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.navbar .nav-link {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.navbar .nav-link:last-child {
+    margin-right: 0;
+
+}
+
+  .nav-link img {
+      width: 20px;
+      height: 20px;
+  }
+
+  .forsearch {
+      margin-left: 20px;
+    
+  }
+  .custom-search {
+    background-color: #93867C;
+    color: #93867C;
+    font-weight: bold;
+width: 331px;
+height: 25px;
+font-size: 10px;
+}
+  .category {
+      margin-top: 20px;
+  }
+
+  .buttons {
+      margin-top: 10px;
+  }
+  .btn-primary {
+            font-size: 10px;
+            color: #603809;
+            background-color: #BE9B7B;
+            border-color: #403932; 
+        }
+        
+        .btn-primary:hover {
+            background-color: #5E4A3C; 
+            border-color: #D9D9D9; 
+        }
+
+  .menu-item {
+      background-color: #BE9B7B;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 4px #403932;
+      width: 240px;
+    height: 170px; 
+    margin-left: 70px;
+  }
+
+  .menu-item {
+            font-size: smaller;
+            padding: 5px;
+            font-weight: bold;
+            color: #FFFFFF;
+        }
+        
+        .menu-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            width: 90px; /* Adjust the width of the image */
+            height: 90px; /* Adjust the height of the image */
+        }
+        .description {
+            font-size: 8px;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 8px;
+            margin-bottom: 5px;
+        }
+        .menu-item h6 {
+            color: #A96224; /* Change the color */
+            font-size: 12px; /* Change the font size */
+            font-weight: bold;
+        }
+        .btnfirst {
+  width: 130px;
+  height: 40px;
+  border: 3px solid #4A3323; /* Example: Red border color */
+  color: #5E4A3C;
+}
+
+.btn2 {
+  width: 130px;
+  height: 40px;
+  border: 3px solid #4A3323; /* Example: Green border color */
+  color: #5E4A3C;
+}
+
+.btn3 {
+    width: 130px;
+  height: 40px;
+  border: 3px solid #4A3323; /* Example: Blue border color */
+  color: #5E4A3C;
+}
+
+.btn4 {
+    width: 130px;
+  height: 40px;
+  border: 3px solid #4A3323; /* Example: Magenta border color */
+  color: #5E4A3C;
+}
+
+.btn5 {
+    width: 130px;
+  height: 40px;
+  border: 3px solid #4A3323; /* Example: Yellow border color */
+  color: #5E4A3C;
+}
+
+.navbar-logo {
+  display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        
+        .navbar-logo img {
+            width: 30px; /* Adjust the width of the logo */
+            height: 30px; /* Adjust the height of the logo */
+            margin-right: 10px;
+        }
+        .navbar span {
+            color: #603809;
+            font-size: 10px;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+         
+</style>
+
+
+
+<script>
+// Retrieve the name from local storage
+const profileName = localStorage.getItem('profileName');
+
+// Update the profile name on the dashboard page
+const profileNameElement = document.getElementById('profileName');
+profileNameElement.textContent = profileName;    
+
+function showMenu(category) {
+  // Hide the current menu items
+  document.getElementById("menuItems").style.display = "none";
+            var menuItems = "";
+            if (category === 'hotCoffee') {
+                menuItems = `
+                <div class="row" id="menuItems">
+        <div class="col-md-4">
+                <div class="menu-item">
+                    <img src="1st.png" alt="Coffee 1">
+                    <h6>ESPRESSO (₱120)</h6>
+                    <button class="btn btn-primary" onclick="addToCart('ESPRESSO', '120')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <img src="2nd.png" alt="Coffee 2">
+                    <h6>LATTE (₱170)</h6>
+                    <button class="btn btn-primary" onclick="addToCart('LATTE', '170')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="menu-item">
+                    <img src="3rd.png" alt="Coffee 3">
+                    <h6>CAPPUCCINO (₱130)</h6>
+                    <button class="btn btn-primary" onclick="addToCart('CAPPUCCINO', '130')">Add to Cart</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="menu-item">
+                  <img src="4th.png" alt="Coffee 3">
+                  <h6>CHARCOAL COFFEE (₱190)</h6>
+                  <button class="btn btn-primary" onclick="addToCart('CHARCOAL COFFEE', '190')">Add to Cart</button>
+              </div>
+          </div>
+          <div class="col-md-4">
+            <div class="menu-item">
+                <img src="5th.png" alt="Coffee 3">
+                <h6>MATCHA LATTE (₱150)</h6>
+                <button class="btn btn-primary" onclick="addToCart('MATCHA LATTE', '150')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menu-item">
+              <img src="6th.png" alt="Coffee 3">
+              <h6>BLUEBERRY LATTE (₱190)</h6>
+              <button class="btn btn-primary" onclick="addToCart('BLUEBERRY LATTE', '190')">Add to Cart</button>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-item">
+            <img src="7th.png" alt="Coffee 3">
+            <h6>MOCHA LATTE (₱180)</h6>
+            <button class="btn btn-primary" onclick="addToCart('MOCHA LATTE', '180')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="menu-item">
+          <img src="8th.png" alt="Coffee 3">
+          <h6>HAZELNUT LATTE (₱175)</h6>
+          <button class="btn btn-primary" onclick="addToCart('HAZELNUT LATTE', '175')">Add to Cart</button>
+      </div>
+  </div>
+  <div class="col-md-4">
+    <div class="menu-item">
+        <img src="9th.png" alt="Coffee 3">
+        <h6>MACCIATHO (₱195)</h6>
+        <button class="btn btn-primary" onclick="addToCart('MACCIATHO', '195')">Add to Cart</button>
+    </div>
+</div>
+                `;
+            } else if (category === 'icedCoffee') {
+                menuItems = `
+                <div class="row" id="menuItems">
+    <div class="col-md-4">
+            <div class="menu-item">
+                <img src="I1.png" alt="Coffee 1">
+                <h6>ICED AMERICANO (₱190)</h6>
+                <button class="btn btn-primary" onclick="addToCart('ICED AMERICANO', '190')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="I2.png" alt="Coffee 2">
+                <h6>VANILLA ICED COFFEE (₱195)</h6>
+                <button class="btn btn-primary" onclick="addToCart('VANILLA ICED COFFEE', '195')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="I3.png" alt="Coffee 3">
+                <h6>CAPPUCCINO ICED COFFEE (₱215)</h6>
+                <button class="btn btn-primary" onclick="addToCart('CAPPUCCINO ICED COFFEE', '215')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menu-item">
+              <img src="I4.png" alt="Coffee 3">
+              <h6>CHARCOAL ICED COFFEE (₱210)</h6>
+              <button class="btn btn-primary" onclick="addToCart('CHARCOAL ICED COFFEE', '210')">Add to Cart</button>
+          </div>
+      </div>
+      <div class="col-md-4">
+        <div class="menu-item">
+            <img src="I5.png" alt="Coffee 3">
+            <h6>ICED MATCHA LATTE (₱210)</h6>
+            <button class="btn btn-primary" onclick="addToCart('ICED MATCHA LATTE', '210')">Add to Cart</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+      <div class="menu-item">
+          <img src="I6.png" alt="Coffee 3">
+          <h6>ICED MOCHA COFFEE (₱200)</h6>
+          <button class="btn btn-primary" onclick="addToCart('ICED MOCHA COFFEE', '200')">Add to Cart</button>
+      </div>
+  </div>
+  <div class="col-md-4">
+    <div class="menu-item">
+        <img src="I7.png" alt="Coffee 3">
+        <h6>ICED CARAMEL COFFEE (₱190)</h6>
+        <button class="btn btn-primary" onclick="addToCart('ICED CARAMEL COFFEE', '190')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+  <div class="menu-item">
+      <img src="I8.png" alt="Coffee 3">
+      <h6>HAZELNUT ICED LATTE (₱195)</h6>
+      <button class="btn btn-primary" onclick="addToCart('HAZELNUT ICED LATTE', '195')">Add to Cart</button>
+  </div>
+</div>
+<div class="col-md-4">
+<div class="menu-item">
+    <img src="I9.png" alt="Coffee 3">
+    <h6>STRAWBERRY VANILLA (₱205)</h6>
+    <button class="btn btn-primary" onclick="addToCart('STRAWBERRY VANILA', '205')">Add to Cart</button>
+</div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="I10.png" alt="Coffee 3">
+        <h6>ICED VANILLA LATTE (₱200)</h6>
+        <button class="btn btn-primary" onclick="addToCart('ICED VANILLA LATTE', '200')">Add to Cart</button>
+    </div>
+    </div>
+    <div class="col-md-4">
+        <div class="menu-item">
+            <img src="I11.png" alt="Coffee 3">
+            <h6>MACCIATHO ICED COFFEE (₱220)</h6>
+            <button class="btn btn-primary" onclick="addToCart('MACCIATHO ICED COFFEE', '220')">Add to Cart</button>
+        </div>
+        </div>
+        <div class="col-md-4">
+            <div class="menu-item">
+                <img src="I12.png" alt="Coffee 3">
+                <h6>ICED BLUEBERRY LATTE (₱215)</h6>
+                <button class="btn btn-primary" onclick="addToCart('BLUEBERRY LATTE', '215')">Add to Cart</button>
+            </div>
+            </div>
+                `;
+            } else if (category === 'fruitTea') {
+                menuItems = `
+                    <!-- Fruit Tea menu items -->
+                    <div class="col-md-4">
+                        <div class="menu-item">
+                            <img src="FT1.png" alt="Fruit Tea 1">
+                            <h6>MATCHA (₱200)</h6>
+                            <button class="btn btn-primary" onclick="addToCart('MATCHA', '200')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="menu-item">
+                            <img src="FT2.png" alt="Fruit Tea 2">
+                            <h6>POMEGRANATE (₱215)</h6>
+                            <button class="btn btn-primary" onclick="addToCart('POMEGRANATE', '215')">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="menu-item">
+                            <img src="FT3.png" alt="Fruit Tea 3">
+                            <h6>BLUEBERRY (₱220)</h6>
+                            <button class="btn btn-primary" onclick="addToCart('BLUEBERRY', '220')">Add to Cart</button>
+                        </div>
+                    </div>
+                `;
+            } else if (category === 'frappe') {
+                menuItems = `
+                    <!-- Frappe menu items -->
+                    <div class="col-md-4">
+    <div class="menu-item">
+        <img src="FR1.png" alt="Frappe 1">
+        <h6>CARAMEL FRAPPE (₱250)</h6>
+        <button class="btn btn-primary" onclick="addToCart('CARAMEL FRAPPE', '250')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="FR2.png" alt="Frappe 2">
+        <h6>AMERICANO FRAPPE (₱240)</h6>
+        <button class="btn btn-primary" onclick="addToCart('AMERICANO FRAPPE', '240')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="FR3.png" alt="Frappe 3">
+        <h6>CHOCOLATE FRAPPE (₱245)</h6>
+        <button class="btn btn-primary" onclick="addToCart('CHOCOLATE FRAPPE', '245')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="FR4.png" alt="Frappe 1">
+        <h6>FRAPUCCINO (₱230)</h6>
+        <button class="btn btn-primary" onclick="addToCart('FRAPUCCINO', '230')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="FR5.png" alt="Frappe 2">
+        <h6>STRAWBERRY (₱225)</h6>
+        <button class="btn btn-primary" onclick="addToCart('STRAWBERRY', '225')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="FR6.png" alt="Frappe 3">
+        <h6>MOCHA FRAPPE (₱220)</h6>
+        <button class="btn btn-primary" onclick="addToCart('MOCHA FRAPPE', '220')">Add to Cart</button>
+    </div>
+</div>
+                `;
+            } 
+            
+            else if (category === 'snacks') {
+                menuItems = `
+                <div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN1.png" alt="Frappe 1">
+        <h6>BEEF BURGER (₱75)</h6>
+        <button class="btn btn-primary" onclick="addToCart('BEEF BURGER', '75')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN2.png" alt="Frappe 2">
+        <h6>CHEESE BURGER (₱100)</h6>
+        <button class="btn btn-primary" onclick="addToCart('CHEESE BURGER', '100')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN3.png" alt="Frappe 3">
+        <h6>CHICKEN SANDWICH (₱110)</h6>
+        <button class="btn btn-primary" onclick="addToCart('CHICKEN SANDWICH', '110')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN4.png" alt="Frappe 1">
+        <h6>CLUB SANDWICH (₱80)</h6>
+        <button class="btn btn-primary" onclick="addToCart('CLUB SANDWICH', '80')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN5.png" alt="Frappe 2">
+        <h6>EGG MAYO SANDWICH (₱70)</h6>
+        <button class="btn btn-primary" onclick="addToCart('EGG MAYO SANDWICH', '70')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN6.png" alt="Frappe 3">
+        <h6>FRIES (₱85)</h6>
+        <button class="btn btn-primary" onclick="addToCart('FRIES', '85')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN7.png" alt="Frappe 2">
+        <h6>NACHOS (₱75)</h6>
+       <button class="btn btn-primary" onclick="addToCart('NACHOS', '75')">Add to Cart</button>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="menu-item">
+        <img src="SN8.png" alt="Frappe 3">
+        <h6>TUNA PASTA (₱115)</h6>
+       <button class="btn btn-primary" onclick="addToCart('TUNA PASTA', '115')">Add to Cart</button>
+    </div>
+</div>
+ `;    
+}
+
+
+      // Display the new menu items
+document.getElementById("menuItems").innerHTML = menuItems;
+document.getElementById("menuItems").style.display = "flex";  
+}
+
+function addToCart(itemName, itemPrice) {
+  var table = document.getElementById("cartTable");
+
+  // Generate a unique ID for the table row
+  var itemId = "item_" + Math.random().toString(36).substr(2, 9);
+
+  // Create a new row for the item
+  var row = document.createElement("tr");
+  row.id = itemId;
+
+  // Create cells for the item details
+  var nameCell = document.createElement("td");
+  nameCell.textContent = itemName;
+
+  var sizeCell = document.createElement("td");
+  sizeCell.textContent = "Medium";
+
+  var quantityCell = document.createElement("td");
+  quantityCell.textContent = "1";
+  quantityCell.classList.add("quantity"); // Add a class to the quantity cell for easier selection
+
+  var priceCell = document.createElement("td");
+  priceCell.textContent = itemPrice;
+  priceCell.classList.add("price"); // Add a class to the price cell for easier selection
+
+  var actionCell = document.createElement("td");
+
+  // Create buttons for adjusting quantity and removing the item
+  var adjustButton = document.createElement("button");
+  adjustButton.textContent = "Adjust";
+  adjustButton.classList.add("btn", "btn-primary");
+  adjustButton.onclick = function () {
+    adjustCart(itemId);
+  };
+
+  var removeButton = document.createElement("button");
+  removeButton.textContent = "Remove";
+  removeButton.classList.add("btn", "btn-primary");
+  removeButton.onclick = function () {
+    removeItem(itemId);
+  };
+
+  // Append the buttons to the action cell
+  actionCell.appendChild(adjustButton);
+  actionCell.appendChild(removeButton);
+
+  row.appendChild(nameCell);
+  row.appendChild(sizeCell);
+  row.appendChild(quantityCell);
+  row.appendChild(priceCell);
+  row.appendChild(actionCell);
+
+  table.querySelector("tbody").appendChild(row);
+
+  // Update the total
+  total += parseFloat(itemPrice);
+
+  // Update the total display
+  updateTotal();
+}
+
+function adjustCart(itemId) {
+  // Prompt the user to enter a new quantity
+  var newQuantity = prompt("Enter the new quantity:");
+
+  // Validate the input
+  if (newQuantity === null || newQuantity === "") {
+    return; // If the user cancels or doesn't enter a value, do nothing
+  }
+
+  // Convert the new quantity to a number
+  newQuantity = parseInt(newQuantity);
+
+  // Find the table row for the item
+  var row = document.getElementById(itemId);
+
+  // Find the quantity cell and update the value
+  var quantityCell = row.querySelector(".quantity");
+  quantityCell.textContent = newQuantity;
+
+  // Find the price cell and calculate the new price
+  var priceCell = row.querySelector(".price");
+  var itemPrice = parseFloat(priceCell.textContent);
+  var newPrice = itemPrice * newQuantity;
+  priceCell.textContent = newPrice.toFixed(2);
+
+  // Update the total
+  updateTotal();
+}
+
+function removeItem(itemId) {
+  // Find the table row for the item
+  var row = document.getElementById(itemId);
+
+  // Remove the row from the table
+  row.parentNode.removeChild(row);
+
+  // Update the total
+  updateTotal();
+}
+
+// Function to update the total
+function updateTotal() {
+  // Calculate the total price
+  var totalPrice = 0;
+  var priceCells = document.querySelectorAll(".price");
+
+  priceCells.forEach(function (cell) {
+    totalPrice += parseFloat(cell.textContent);
+  });
+
+  // Update the total display
+ 
+}
+ function searchMenu() {
+            var input, filter, menuItems, item, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            menuItems = document.getElementsByClassName("menu-item");
+
+            for (i = 0; i < menuItems.length; i++) {
+                item = menuItems[i];
+                txtValue = item.textContent || item.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }
+// Function to calculate the total price of the cart
+function updateTotal() {
+  // Get all the price cells
+  var priceCells = document.getElementsByClassName("price");
+  
+  // Initialize the total price
+  var totalPrice = 0;
+  
+  // Iterate over each price cell and add the price to the total
+  for (var i = 0; i < priceCells.length; i++) {
+    totalPrice += parseFloat(priceCells[i].textContent);
+  }
+  
+  // Display the total price
+  var totalPriceElement = document.getElementById("totalPrice");
+  totalPriceElement.value = totalPrice.toFixed(2);
+}
+// Function to handle the finalize button click event
+function finalizeOrder() {
+  // Get the form input values
+  const address = document.querySelector("#addressInput").value;
+  const voucher = document.querySelector("#voucherInput").value;
+  const paymentMode = document.querySelector("#paymentModeInput").value;
+
+  // Calculate the total price
+  const totalPrice = calculateTotalPrice();
+
+  // Display the final form data
+  const finalForm = `
+    <h2>Finalize Order</h2>
+    <p><strong>Delivery Address:</strong> ${address}</p>
+    <p><strong>Voucher:</strong> ${voucher}</p>
+    <p><strong>Payment Mode:</strong> ${paymentMode}</p>
+    <p><strong>Total Price:</strong> ₱${totalPrice}</p>
+    <button class="btn btn-primary" onclick="confirmOrder()">Checkout</button>
+  `;
+
+  // Display the final form below the cart table
+  const finalFormContainer = document.querySelector("#finalFormContainer");
+  finalFormContainer.innerHTML = finalForm;
+}
+
+// Function to handle the confirm order button click event
+function confirmOrder() {
+  // Perform the necessary actions to complete the order
+  // For example, you can submit the form data to a server-side script
+  alert("Order confirmed! Thank you for your purchase.");
+  cartItems = []; // Clear the cart items
+  refreshCartTable(); // Refresh the cart table
+  document.querySelector("#finalFormContainer").innerHTML = ""; // Clear the final form
+}
+    </script>
